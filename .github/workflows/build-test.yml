@@ -5,9 +5,10 @@ on:
     branches: 
       - main
 
-jobs: job1:
+jobs: 
+  job1:
   runs-on: windows-latest
-  steps:
+   steps:
     - name: Pulling repo
       uses: actions/checkout@v2
     - name: Installing Python 3.9
