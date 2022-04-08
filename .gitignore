@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 */testfile.txt
-.output.txt
+input/
+output/
