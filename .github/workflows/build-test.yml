@@ -3,6 +3,8 @@ name: Build and Test Code
 on: 
   push:
     branches: 
+      - '**'
+  pull-request:
       - main
 
 jobs:
