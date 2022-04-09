@@ -7,9 +7,9 @@ def test_read_file():
 
     # Does read return false if given an improper file path?
     if not(read_file("") == False):
-        errors.append("read_file failed to return False with an incorrect file path.")
+        errors.append('FAILED read_file("") == False.')
 
     if not(read_file("testfile.txt") == "Hello World! How are you?"):
-        errors.append("read_file failed to parse correctly.")
+        errors.append('FAILED read_file("testfile.txt") == "Hello World! How are you?".')
 
     assert not errors, errors
