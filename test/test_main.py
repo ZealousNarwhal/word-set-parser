@@ -6,10 +6,12 @@ def test_read_file():
     os.chdir("test")
 
     # Does read return false if given an improper file path?
-    if not(read_file("") == False):
-        errors.append('FAILED read_file("") == False.')
+    r1 = read_file("")
+    if not(r1 == False):
+        errors.append(f'read_file("") expected False. Instead got {r1}')
 
-    if not(read_file("testfile.txt") == "Hello World! How are you?"):
-        errors.append('FAILED read_file("testfile.txt") == "Hello World! How are you?".')
+    r2 = read_file("testfile.txt")
+    if not(r2 == "Hello World! Hello World!"):
+        errors.append(f'read_file("testfile.txt") expected "Hello World! Hello World!". Insead got {r2}')
 
     assert not errors, errors
