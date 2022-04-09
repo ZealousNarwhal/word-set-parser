@@ -11,7 +11,7 @@ def test_read_file():
         errors.append(f'read_file("") expected False. Instead got {r1}')
 
     r2 = read_file("testfile.txt")
-    if not(r2 == "Hello World! Hello World!"):
+    if not(r2 == "Hello World! Hello World!!"):
         errors.append(f'read_file("testfile.txt") expected "Hello World! Hello World!". Insead got {r2}')
 
     assert not errors, errors
