@@ -61,11 +61,14 @@ def compile_single_output(args):
 def get_files_in_folder(directory_path, type=""):
     '''Returns a list of matching files from a directory path.'''
     list = []
-    for item in os.listdir(directory_path):
-        if type in item:
-            list.append(item)
-    return list
-    
+    try:
+        for item in os.listdir(directory_path):
+            if type in item:
+                list.append(item)
+        return list
+    except:
+        print("Invalid directory path provided to get_files_in_folder")
+        return False
 
 if __name__ == '__main__':
     main()
