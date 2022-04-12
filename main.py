@@ -1,5 +1,4 @@
 from ctypes import sizeof
-from itertools import count
 from operator import indexOf
 import sys
 import os
@@ -86,12 +85,15 @@ def get_files_in_folder(directory_path, type=""):
         print("Invalid directory path provided to get_files_in_folder")
         return False
 
+
 def text_to_csv(text):
     '''Takes raw text input and outputs unique words in csv format.'''
     text = text.rstrip()
     words = set()
     for word in text.split():
-        words.add(f"{word},")
+        if word.isalpha():
+            words.add(f"{word},")
+    # Remove the comma delimiter from the final word
     return "".join(words).rstrip(',')
 
 
